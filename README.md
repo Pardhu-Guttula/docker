@@ -46,6 +46,8 @@ docker rm container_id_or_name
 
 - Removes the specified Docker container.
 
+---
+
 ### 6. List Docker Images
 
 ```bash
