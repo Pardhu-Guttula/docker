@@ -1,6 +1,3 @@
-Certainly! Below is a sample README file for your Docker repository, including daily Docker commands with brief explanations:
-
-````markdown
 # Docker Repository README
 
 ## Overview
@@ -14,7 +11,6 @@ This repository contains Docker configurations and files for [Your Project Name]
 ```bash
 docker build -t your_image_name:tag .
 ```
-````
 
 - Builds a Docker image from the current directory (`.`) with the specified name and tag.
 
