@@ -120,7 +120,3 @@ docker-compose ps
 # Remove all unused containers, networks, and images
 docker system prune [OPTIONS]
 ```
----
-
-Replace placeholders with actual values. Refer to the [official Docker documentation](https://docs.docker.com/) for detailed usage.
-```
