@@ -6,11 +6,12 @@ Follow the [official Docker installation guide](https://docs.docker.com/get-dock
 
 ### Basic Commands
 ```bash
-# Show Docker version and information
 docker version
-
-# Display system-wide information
+- Show Docker version and information
+```
+```bash
 docker info
+-  Display system-wide information
 ```
 ---
 
