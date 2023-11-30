@@ -7,12 +7,14 @@ Follow the [official Docker installation guide](https://docs.docker.com/get-dock
 ### Basic Commands
 ```bash
 docker version
-- Show Docker version and information
 ```
+- Show Docker version and information
+
 ```bash
 docker info
--  Display system-wide information
 ```
+-  Display system-wide information
+
 ---
 
 ### Container Management
