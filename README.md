@@ -16,44 +16,65 @@ docker info
 
 ### Container Management
 ```bash
-# List running containers
+### Create a Container
+docker create -it --name my_container ubuntu:latest bash
+- Creates a new container named "my_container" based on the latest Ubuntu image and starts an interactive bash session.
+
+### Create and Start a Container
+docker run -it --name new_container nginx:latest
+- Creates and starts a new container named "new_container" based on the latest NGINX image.
+
+### List Running Containers
 docker ps
+- Displays a list of currently running containers.
 
-# List all containers (running and stopped)
+### List All Containers
 docker ps -a
+- Shows a list of all containers, including stopped ones.
 
-# Create and start a container
-docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+### Start a Container
+docker start my_container
+- Starts the "my_container" container.
 
-# Start a stopped container
-docker start [OPTIONS] CONTAINER
+### Stop a Running Container
+docker stop my_container
+- Stops the "my_container" container.
 
-# Stop a running container
-docker stop [OPTIONS] CONTAINER
+### Remove a Container
+docker rm my_container
+- Removes the "my_container" container.
 
-# Restart a container
-docker restart [OPTIONS] CONTAINER
+### Remove a Container Forcefully
+docker rm -f my_container
+- Removes the "my_container" container.
 
-# Run a command in a running container
-docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+### Inspect a Container
+docker inspect my_container
+- Retrieves detailed information about the "my_container" container.
 
-# Fetch the logs of a container
-docker logs [OPTIONS] CONTAINER
+### Fetch the Logs of a Container
+docker logs my_container
+- Retrieves and displays the logs of the "my_container" container.
 
-# Remove one or more containers
-docker rm [OPTIONS] CONTAINER
-
-# Kill a running container
-docker kill [OPTIONS] CONTAINER
+### Run a Command in a Running Container
+docker exec -it my_container ls /app
+- Executes the "ls /app" command in the running "my_container" container.
 
 # Pause all processes within a container
 docker pause CONTAINER
 
 # Unpause a paused container
 docker unpause CONTAINER
+
+### Kill a Running Container
+docker kill my_container
+- Forcefully terminates the "my_container" container.
+
+### Restart a Container
+docker restart my_container
+- Restarts the "my_container" container.
 ```
 ---
-
 ### Image Management
 ```bash
 # List all images
