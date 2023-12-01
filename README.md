@@ -3,7 +3,6 @@ Follow the [official Docker installation guide](https://docs.docker.com/get-dock
 ---
 
 ## Daily Docker Commands
-
 ### Basic Commands
 ```bash
 docker version
@@ -14,15 +13,17 @@ docker version
 docker info
 ```
 -  Display system-wide information
-
 ---
 
 ### Container Management
-```bash
+
 ### Create a Container
+```bash
 docker create -it --name my_container ubuntu:latest bash
+```
 - Creates a new container named "my_container" based on the latest Ubuntu image and starts an interactive bash session.
 
+```bash
 ### Create and Start a Container
 docker run -it --name new_container nginx:latest
 - Creates and starts a new container named "new_container" based on the latest NGINX image.
