@@ -31,25 +31,32 @@ docker run -it --name new_container nginx:latest
 ```bash
 docker start my_container || docker container start <container_id>
 ```
-- Starts the "my_container" container.
 
 #### Stop a Running Container
 ```bash
 docker stop my_container
 ```
-- Stops the "my_container" container.
+
+### Run a container with default port
+```bash
+docker run -it --name my_container -P nginx:latest
+```
+
+### Run a container with custom port
+```bash
+docker run -it --name my_container -p 8080:80 nginx:latest
+```
+
 
 #### List Running Containers
 ```bash
 docker ps
 ```
-- Displays a list of currently running containers.
 
 #### List All Containers
 ```bash
 docker ps -a
 ```
-- Shows a list of all containers, including stopped ones.
 
 #### Pause all processes within a container
 ```bash
@@ -65,55 +72,46 @@ docker unpause CONTAINER
 ```bash
 docker restart my_container
 ```
-- Restarts the "my_container" container.
 
 #### Remove a Container
 ```bash
 docker rm my_container
 ```
-- Removes the "my_container" container.
 
 #### Remove a Container Forcefully
 ```bash
 docker rm -f my_container
 ```
-- Removes the "my_container" container forcefully.
 
 #### Remove all containers 
 ```bash
 docker rm -f $(docker ps -aq)
 ```
-- Removes all containers.
 
 #### Enter into a container
 ```bash
 docker exec -it container_id bash || docker exec -it container_id sh 
 ```
-- Enters into your container
 
 #### Inspect a Container
 ```bash
 docker inspect my_container
 ```
-- Retrieves detailed information about the "my_container" container.
 
 #### Fetch the Logs of a Container
 ```bash
 docker logs my_container
 ```
-- Retrieves and displays the logs of the "my_container" container.
 
 #### Run a Command in a Running Container
 ```bash
 docker exec -it my_container ls /app
 ```
-- Executes the "ls /app" command in the running "my_container" container.
 
 #### Kill a Running Container
 ```bash
 docker kill my_container
 ```
-- Forcefully terminates the "my_container" container.
 
 #### Exporting a container
 ```bash
