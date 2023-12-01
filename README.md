@@ -27,6 +27,18 @@ docker run -it --name new_container nginx:latest
 ```
 - Creates and starts a new container named "new_container" based on the latest NGINX image.
 
+#### Start a Container
+```bash
+docker start my_container || docker container start <container_id>
+```
+- Starts the "my_container" container.
+
+#### Stop a Running Container
+```bash
+docker stop my_container
+```
+- Stops the "my_container" container.
+
 #### List Running Containers
 ```bash
 docker ps
@@ -39,17 +51,21 @@ docker ps -a
 ```
 - Shows a list of all containers, including stopped ones.
 
-#### Start a Container
+# Pause all processes within a container
 ```bash
-docker start my_container
+docker pause CONTAINER
 ```
-- Starts the "my_container" container.
 
-#### Stop a Running Container
+# Unpause a paused container
 ```bash
-docker stop my_container
+docker unpause CONTAINER
 ```
-- Stops the "my_container" container.
+
+#### Restart a Container
+```bash
+docker restart my_container
+```
+- Restarts the "my_container" container.
 
 #### Remove a Container
 ```bash
@@ -61,7 +77,19 @@ docker rm my_container
 ```bash
 docker rm -f my_container
 ```
-- Removes the "my_container" container.
+- Removes the "my_container" container forcefully.
+
+#### Remove all containers 
+```bash
+docker rm -f $(docker ps -aq)
+```
+- Removes all containers.
+
+# Enter into a container
+```bash
+docker exec -it container_id bash || docker exec -it container_id sh 
+```
+- Enters into your container
 
 #### Inspect a Container
 ```bash
@@ -81,27 +109,35 @@ docker exec -it my_container ls /app
 ```
 - Executes the "ls /app" command in the running "my_container" container.
 
-# Pause all processes within a container
-```bash
-docker pause CONTAINER
-```
-
-# Unpause a paused container
-```bash
-docker unpause CONTAINER
-```
-
 #### Kill a Running Container
 ```bash
 docker kill my_container
 ```
 - Forcefully terminates the "my_container" container.
 
-#### Restart a Container
+#### Exporting a container
 ```bash
-docker restart my_container
+docker export CONTAINER_ID > OUTPUT_FILE.tar 
 ```
-- Restarts the "my_container" container.
+
+#### Importing a container
+```bash
+cat ARCHIVE_FILE.tar | docker import - NEW_IMAGE_NAM
+```
+
+#### Running imported container
+```bash
+docker run -d --name NEW_CONTAINER_NAME [OPTIONS] NEW_IMAGE_NAME 
+```
+
+#### To know status of container
+```bash
+docker container stats 
+```
+#### Remove all stopped containers
+```bash
+docker container prune
+```
 ---
 
 ### Image Management
