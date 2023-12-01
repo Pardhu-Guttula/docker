@@ -14,25 +14,25 @@ docker info
 - Display system-wide information
 ---
 
-### Container Management
-#### Create a Container
+## Container Management
+### Create a Container
 ```bash
 docker create -it --name my_container ubuntu:latest bash
 ```
 - Creates a new container named "my_container" based on the latest Ubuntu image and starts an interactive bash session.
 
-##### Create and Start a Container
+### Create and Start a Container
 ```bash
 docker run -it --name new_container nginx:latest
 ```
 - Creates and starts a new container named "new_container" based on the latest NGINX image.
 
-#### Start a Container
+### Start a Container
 ```bash
 docker start my_container || docker container start <container_id>
 ```
 
-#### Stop a Running Container
+### Stop a Running Container
 ```bash
 docker stop my_container
 ```
@@ -48,101 +48,101 @@ docker run -it --name my_container -p 8080:80 nginx:latest
 ```
 
 
-#### List Running Containers
+### List Running Containers
 ```bash
 docker ps
 ```
 
-#### List All Containers
+### List All Containers
 ```bash
 docker ps -a
 ```
 
-#### Pause all processes within a container
+### Pause all processes within a container
 ```bash
 docker pause CONTAINER
 ```
 
-#### Unpause a paused container
+### Unpause a paused container
 ```bash
 docker unpause CONTAINER
 ```
 
-#### Restart a Container
+### Restart a Container
 ```bash
 docker restart my_container
 ```
 
-#### Remove a Container
+### Remove a Container
 ```bash
 docker rm my_container
 ```
 
-#### Remove a Container Forcefully
+### Remove a Container Forcefully
 ```bash
 docker rm -f my_container
 ```
 
-#### Remove all containers 
+### Remove all containers 
 ```bash
 docker rm -f $(docker ps -aq)
 ```
 
-#### Enter into a container
+### Enter into a container
 ```bash
 docker exec -it container_id bash || docker exec -it container_id sh 
 ```
 
-#### Inspect a Container
+### Inspect a Container
 ```bash
 docker inspect my_container
 ```
 
-#### Fetch the Logs of a Container
+### Fetch the Logs of a Container
 ```bash
 docker logs my_container
 ```
 
-#### Run a Command in a Running Container
+### Run a Command in a Running Container
 ```bash
 docker exec -it my_container ls /app
 ```
 
-#### Kill a Running Container
+### Kill a Running Container
 ```bash
 docker kill my_container
 ```
 
-#### Exporting a container
+### Exporting a container
 ```bash
 docker export CONTAINER_ID > OUTPUT_FILE.tar 
 ```
 
-#### Importing a container
+### Importing a container
 ```bash
 cat ARCHIVE_FILE.tar | docker import - NEW_IMAGE_NAM
 ```
 
-#### Running imported container
+### Running imported container
 ```bash
 docker run -d --name NEW_CONTAINER_NAME [OPTIONS] NEW_IMAGE_NAME 
 ```
 
-#### To know status of container
+### To know status of container
 ```bash
 docker container stats 
 ```
-#### Remove all stopped containers
+### Remove all stopped containers
 ```bash
 docker container prune
 ```
-#### Converting container to image
+### Converting container to image
 ```bash
 docker commit --author="pardhu" -m "msg" container_id image
 ```
 ---
 
-### Image Management
+## Image Management
 
 ```bash
 # List all images
