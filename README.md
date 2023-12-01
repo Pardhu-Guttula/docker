@@ -1,11 +1,8 @@
 ## Installation
-
-## Follow the [official Docker installation guide](https://docs.docker.com/get-docker/) based on your operating system.
+#### Follow the [official Docker installation guide](https://docs.docker.com/get-docker/) based on your operating system.
 
 ## Daily Docker Commands
-
 ### Basic Commands
-
 ```bash
 docker version
 ```
@@ -18,7 +15,6 @@ docker info
 ---
 
 ### Container Management
-
 #### Create a Container
 ```bash
 docker create -it --name my_container ubuntu:latest bash
