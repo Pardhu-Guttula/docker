@@ -51,12 +51,12 @@ docker ps -a
 ```
 - Shows a list of all containers, including stopped ones.
 
-# Pause all processes within a container
+#### Pause all processes within a container
 ```bash
 docker pause CONTAINER
 ```
 
-# Unpause a paused container
+#### Unpause a paused container
 ```bash
 docker unpause CONTAINER
 ```
@@ -85,7 +85,7 @@ docker rm -f $(docker ps -aq)
 ```
 - Removes all containers.
 
-# Enter into a container
+#### Enter into a container
 ```bash
 docker exec -it container_id bash || docker exec -it container_id sh 
 ```
@@ -137,6 +137,10 @@ docker container stats
 #### Remove all stopped containers
 ```bash
 docker container prune
+```
+#### Converting container to image
+```bash
+docker commit --author="pardhu" -m "msg" container_id image
 ```
 ---
 
